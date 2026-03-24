@@ -24,9 +24,12 @@ namespace ProjetoICG1BI
 {
     public partial class Form1 : Form
     {
+        int r = 0, g = 0, b = 0;
+        int bntapertado = 0;
         public Form1()
         {
             InitializeComponent();
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -77,11 +80,60 @@ namespace ProjetoICG1BI
                 double seccao = (2 * Math.PI)/n;
                 float a = Modulo((float)angulo, (float)seccao) - ((float)seccao/2);
                 double d_max = R * Math.Cos(Math.PI/n) / Math.Cos(a);
+                if (d < d_max)
+                {
+                    pintaP(caneta(cores(r, g, b)), px, py, e);
+                }
 
             }
         }
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
+            if (bntapertado == 1)
+            {
+                decagono(e, r, g, b);
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem == null) return;
+
+            string CorSelecionada = comboBox1.SelectedItem.ToString();
+
+            switch (CorSelecionada)
+            {
+                case "Vermelho":
+                    r = 255; g = 0; b = 0;
+                    break;
+                case "Verde":
+                    r = 0; g = 255; b = 0;
+                    break;
+                case "Azul":
+                    r = 0; g = 0; b = 255;
+                    break;
+                case "Amarelo":
+                    r = 255; g = 255; b = 0;
+                    break;
+                case "Ciano":
+                    r = 0; g = 255; b = 255;
+                    break;
+                case "Magenta":
+                    r = 255; g = 0; b = 255;
+                    break;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem == null)
+            {
+                MessageBox.Show("Selecione uma cor antes de desenhar o decágono.");
+                return;
+            }
+
+            bntapertado = 1;
+            this.Invalidate();
 
         }
     }
