@@ -113,8 +113,7 @@ A interface contém:
 
 ## 👨‍💻 Autores
 
-Heitor Pinheiro de Souza
-Mateus Todeschini Monteiro
+Heitor Pinheiro de Souza e Mateus Todeschini Monteiro
 
 ---
 
