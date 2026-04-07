@@ -111,9 +111,10 @@ A interface contém:
 
 ---
 
-## 👨‍💻 Autor
+## 👨‍💻 Autores
 
-Desenvolvido como parte de estudos em **Computação Gráfica**.
+Heitor Pinheiro de Souza
+Mateus Todeschini Monteiro
 
 ---
 
